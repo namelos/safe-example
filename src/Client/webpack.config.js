@@ -73,6 +73,10 @@ module.exports = {
             '/api/*': {
                 target: 'http://localhost:' + (process.env.SERVER_PROXY_PORT || "8085"),
                 changeOrigin: true
+            },
+            '/socket': {
+                target: 'http://localhost:' + (process.env.SERVER_PROXY_PORT || "8085"),
+                ws: true
             }
         },
         // turn on hot module reloading
